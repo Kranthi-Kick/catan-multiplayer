@@ -1,0 +1,455 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #2c5530 0%, #4a7c59 100%);
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Additional component-specific styles */
+
+/* Trade Panel Enhancements */
+.trade-offer {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+}
+
+.trade-offer.my-trade {
+  border-color: #4a7c59;
+  background: #f8fff8;
+}
+
+.trade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.trade-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.trade-side {
+  flex: 1;
+}
+
+.trade-arrow {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.resource-amount {
+  background: #f0f0f0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin: 0.2rem 0;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.trade-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.accept-trade-button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reject-trade-button {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Development Card Panel Enhancements */
+.card-action-panel {
+  background: #f8f8f8;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.resource-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resource-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: #4a7c59;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.resource-button:hover {
+  background: #3a6b47;
+}
+
+.resource-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.resource-amount {
+  min-width: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.monopoly-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.monopoly-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.monopoly-option:hover {
+  background: #f0f0f0;
+}
+
+.confirm-card-button {
+  background: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.confirm-card-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Chat Panel Enhancements */
+.chat-panel {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.chat-header {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.chat-header h3 {
+  margin: 0;
+  color: #2c5530;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chat-message {
+  max-width: 80%;
+}
+
+.chat-message.own {
+  align-self: flex-end;
+}
+
+.chat-message.system {
+  align-self: center;
+  max-width: 90%;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+}
+
+.message-content {
+  background: #f0f0f0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+
+.chat-message.own .message-content {
+  background: #4a7c59;
+  color: white;
+}
+
+.chat-message.system .message-content {
+  background: #fff3e0;
+  text-align: center;
+  font-style: italic;
+}
+
+.message-time {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+.chat-input-form {
+  display: flex;
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  gap: 0.5rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.send-button {
+  background: #4a7c59;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.send-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.quick-messages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.quick-messages button {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.quick-messages button:hover {
+  background: #bbdefb;
+}
+
+/* Player Panel Enhancements */
+.current-turn-info {
+  background: #e8f5e8;
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 1rem;
+  border: 2px solid #4a7c59;
+}
+
+.phase-info {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+.game-stats {
+  background: #f5f5f5;
+  padding: 0.8rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.achievement {
+  background: #fff3e0;
+  color: #ef6c00;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin: 0.3rem 0;
+  text-align: center;
+}
+
+.current-turn {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.winner-badge {
+  background: #4caf50;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.me-indicator {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Build mode indicators */
+.build-mode-indicator, .robber-mode-indicator {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(74, 124, 89, 0.9);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
+  font-weight: bold;
+  z-index: 10;
+  animation: slideDown 0.3s ease-out;
+}
+
+.robber-mode-indicator {
+  background: rgba(139, 0, 0, 0.9);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateX(-50%) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Game winner display */
+.game-winner {
+  background: linear-gradient(45deg, #4caf50, #8bc34a);
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 1rem 0;
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.3);
+}
+
+.game-winner h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* Active trades section */
+.active-trades {
+  background: #fff8e1;
+  border: 2px solid #ffc107;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.active-trades h4 {
+  color: #f57c00;
+  margin-bottom: 0.8rem;
+}
+
+.trade-details {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.trade-details div {
+  margin: 0.2rem 0;
+}
+
+/* Responsive improvements */
+@media (max-width: 1024px) {
+  .chat-panel {
+    height: 300px;
+  }
+  
+  .trade-content {
+    flex-direction: column;
+  }
+  
+  .trade-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    padding: 0.5rem;
+  }
+  
+  .quick-messages {
+    justify-content: center;
+  }
+  
+  .monopoly-selector {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
